@@ -1,0 +1,44 @@
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build & Output
+dist/
+build/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# System
+.idea
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Deployment
+.netlify/
+.vercel/
+.firebase/
+
+# Backup Files
+*.bak
+*.tmp
+*.backup

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBTF Exchange - Login</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- TOP ALERT POPUP -->
+    <div id="topAlert" class="top-alert">Invalid username or password</div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="main-container">
+        
+        <!-- LOGO SECTION -->
+        <div class="logo-section">
+            <img src="assets/images/cbtf-logo.png" alt="CBTF Exchange" class="logo">
+        </div>
+
+        <!-- LOGIN FORM CONTAINER -->
+        <div class="login-container">
+            
+            <!-- USERNAME INPUT -->
+            <div class="input-wrapper">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username" class="form-input" required>
+                    <span class="input-icon">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </div>
+                <span class="validation-text" id="usernameValidation">Please enter username.</span>
+            </div>
+
+            <!-- PASSWORD INPUT -->
+            <div class="input-wrapper">
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" class="form-input" required>
+                    <span class="input-icon toggle-password" onclick="togglePasswordVisibility()">
+                        <i class="fas fa-eye-slash"></i>
+                    </span>
+                </div>
+                <span class="validation-text" id="passwordValidation"></span>
+            </div>
+
+            <!-- LOGIN BUTTON -->
+            <button class="btn btn-primary" onclick="submitForm()">
+                Login
+            </button>
+
+            <!-- DEMO LOGIN BUTTON -->
+            <button class="btn btn-primary" onclick="submitForm()">
+                Login with Demo ID
+            </button>
+
+            <!-- FORGOT PASSWORD LINK -->
+            <a href="#" class="forgot-password-link">Forgot Password?</a>
+
+            <!-- SUCCESS MESSAGE -->
+            <p id="successMsg" class="success-msg" style="display:none;">
+                Contact Whatsapp to Reset Password
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- CHAT SUPPORT WIDGET -->
+    <div class="chat-support">
+        <div class="chat-icon">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-bubble">
+            <p class="chat-title">Hey there!</p>
+            <p class="chat-message">How can we help you?</p>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/919799840309" class="whatsapp-btn" target="_blank" title="WhatsApp Support">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,502 @@
+/* ============================================
+   CBTF EXCHANGE - STYLESHEET
+   ============================================ */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS VARIABLES */
+:root {
+    --primary-dark: #2a2a2a;
+    --secondary-dark: #1a1a1a;
+    --accent-orange: #FF6B35;
+    --accent-orange-dark: #FF5722;
+    --accent-purple: #7C3AED;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border-color: #e0e0e0;
+    --input-bg: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* BODY & PAGE SETUP */
+body {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: var(--text-primary);
+}
+
+/* MAIN CONTAINER */
+.main-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* FADE IN ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* LOGO SECTION */
+.logo-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+}
+
+/* LOGIN CONTAINER */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* INPUT WRAPPER */
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* INPUT GROUP */
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--input-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+
+.input-group:focus-within {
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+/* FORM INPUT */
+.form-input {
+    flex: 1;
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    padding: 0;
+}
+
+.form-input::placeholder {
+    color: #a0a0a0;
+}
+
+/* INPUT ICON */
+.input-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--text-secondary);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.toggle-password {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: var(--accent-orange);
+}
+
+/* VALIDATION TEXT */
+.validation-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    min-height: 18px;
+}
+
+/* BUTTONS */
+.btn {
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    text-transform: capitalize;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-orange-dark) 100%);
+    color: var(--text-primary);
+    box-shadow: var(--box-shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* FORGOT PASSWORD LINK */
+.forgot-password-link {
+    text-align: center;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    margin-top: 10px;
+}
+
+.forgot-password-link:hover {
+    color: var(--accent-orange);
+    text-decoration: underline;
+}
+
+/* SUCCESS MESSAGE */
+.success-msg {
+    text-align: center;
+    color: #4caf50;
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: 500;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TOP ALERT POPUP */
+.top-alert {
+    position: fixed;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: var(--text-primary);
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+    transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    opacity: 0;
+    z-index: 9999;
+}
+
+.top-alert.show {
+    top: 20px;
+    opacity: 1;
+}
+
+/* CHAT SUPPORT WIDGET */
+.chat-support {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    z-index: 100;
+    animation: slideInLeft 0.6s ease-in-out 0.3s both;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.chat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--accent-purple) 0%, #a855f7 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--text-primary);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.chat-icon:hover {
+    transform: scale(1.1);
+}
+
+.chat-bubble {
+    background: var(--input-bg);
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    min-width: 180px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.chat-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.chat-message {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* WHATSAPP FLOATING BUTTON */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    z-index: 99;
+    animation: slideInRight 0.6s ease-in-out 0.3s both;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-btn i {
+    font-size: 28px;
+    color: white;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* TABLET */
+@media (max-width: 768px) {
+    .main-container {
+        gap: 30px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .login-container {
+        max-width: 100%;
+    }
+
+    .form-input {
+        font-size: 15px;
+    }
+
+    .btn {
+        height: 48px;
+        font-size: 15px;
+    }
+
+    .chat-support {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .main-container {
+        gap: 25px;
+    }
+
+    .logo {
+        width: 130px;
+    }
+
+    .login-container {
+        gap: 16px;
+    }
+
+    .input-group {
+        padding: 0 12px;
+    }
+
+    .form-input {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .input-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .btn {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .chat-bubble {
+        min-width: 160px;
+        padding: 12px 15px;
+    }
+
+    .chat-title {
+        font-size: 13px;
+    }
+
+    .chat-message {
+        font-size: 12px;
+    }
+
+    .chat-support {
+        bottom: 15px;
+        left: 15px;
+        gap: 10px;
+    }
+
+    .chat-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .whatsapp-btn {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-btn i {
+        font-size: 24px;
+    }
+
+    .top-alert {
+        font-size: 14px;
+        padding: 14px 15px;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 360px) {
+    .logo {
+        width: 110px;
+    }
+
+    .input-group {
+        padding: 0 10px;
+    }
+
+    .form-input {
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .btn {
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .forgot-password-link {
+        font-size: 12px;
+    }
+
+    .chat-bubble {
+        display: none;
+    }
+}
+
+/* PRINT STYLES */
+@media print {
+    body {
+        display: none;
+    }
+}
